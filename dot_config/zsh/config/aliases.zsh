@@ -21,6 +21,7 @@ typeset -A git_aliases=(
   b   branch
   bl  branch
   c   commit
+  ch  checkout
   d   diff
   ds  diff
   f   fetch

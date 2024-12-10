@@ -12,3 +12,17 @@ function lf() {
 function gen-ssh-keygen-ed25519() {
   ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/keys/$1 -C "$2"
 }
+
+##
+# Function for yazi
+# https://yazi-rs.github.io/docs/quick-start
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+##
+

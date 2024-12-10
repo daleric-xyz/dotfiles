@@ -32,9 +32,9 @@ export MANWIDTH='100'
 export MANPAGER='nvim +Man!'
 
 # npm
-export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
-export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsan.dev'
-export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsan.dev'
+# export NPM_CONFIG_INIT_AUTHOR_NAME='Kutsan Kaplan'
+# export NPM_CONFIG_INIT_AUTHOR_EMAIL='me@kutsan.dev'
+# export NPM_CONFIG_INIT_AUTHOR_URL='https://kutsan.dev'
 export NPM_CONFIG_INIT_LICENSE='GPL-3.0'
 export NPM_CONFIG_INIT_VERSION='0.0.0'
 export NPM_CONFIG_SIGN_GIT_TAG='true'
@@ -49,7 +49,7 @@ export GNUPGHOME="$HOME/.config/gnupg"
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --no-ignore'
-export FZF_DEFAULT_COLORS='--color=dark,fg:-1,bg:-1,hl:4,fg+:7,bg+:8,gutter:-1,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
+# export FZF_DEFAULT_COLORS='--color=dark,fg:-1,bg:-1,hl:4,fg+:7,bg+:8,gutter:-1,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
 export FZF_DEFAULT_OPTS="\
   $FZF_DEFAULT_COLORS \
   --no-multi \
