@@ -15,4 +15,5 @@ return {
   { import = "astrocommunity.pack.yaml" },
   -- Plugins
   { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
+  { import = "astrocommunity.git.neogit" },
 }
