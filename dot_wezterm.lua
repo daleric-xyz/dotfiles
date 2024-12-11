@@ -12,6 +12,8 @@ config.default_cursor_style = "BlinkingBar"
 
 config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
 
+config.window_decorations = "RESIZE"
+
 -- config.color_scheme = "Sonokai (Gogh)"
 config.color_scheme = "Gruvbox Dark (Gogh)"
 -- config.color_scheme = "Tokyo Night (Gogh)"
