@@ -16,4 +16,5 @@ return {
   -- Plugins
   { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
   { import = "astrocommunity.git.neogit" },
+  { import = "astrocommunity.indent.indent-blankline-nvim" },
 }
