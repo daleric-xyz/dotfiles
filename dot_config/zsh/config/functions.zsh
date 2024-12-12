@@ -16,6 +16,7 @@ function gen-ssh-keygen-ed25519() {
 ##
 # Function for yazi
 # https://yazi-rs.github.io/docs/quick-start
+##
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -25,6 +26,9 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+##
+# Use for switch AWS profiles within config/credentials
+##
 sp () {
     SP_ARG=$1
     if [ -n "$SP_ARG" ]; then
