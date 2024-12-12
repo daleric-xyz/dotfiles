@@ -24,5 +24,22 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+sp () {
+    SP_ARG=$1
+    if [ -n "$SP_ARG" ]; then
+        CHECK_PROFILE=`grep "\[$SP_ARG\]" ~/.aws/credentials`
+        CHECK_PROFILE2=`grep "\[profile $SP_ARG\]" ~/.aws/config`
+        if [ -n "$CHECK_PROFILE" ] || [ -n "$CHECK_PROFILE2" ]; then
+            echo "Setting AWS profile to $SP_ARG"
+            export AWS_PROFILE=$SP_ARG
+        else
+            echo "AWS profile $1 does not exist"
+        fi
+    else
+        echo "Setting AWS profile to NULL"
+        unset AWS_PROFILE
+    fi
+}
 ##
 
