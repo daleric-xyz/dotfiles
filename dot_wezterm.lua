@@ -1,61 +1,91 @@
+-- Initialize Configuration
 local wezterm = require("wezterm")
-
--- Use the config_builder for better structure and future compatibility
 local config = wezterm.config_builder()
+local opacity = 0.75
+local transparent_bg = "rgba(22, 24, 26, " .. opacity .. ")"
 
--- General settings
-config.automatically_reload_config = true
-config.enable_tab_bar = true
-config.use_fancy_tab_bar = false
-config.window_close_confirmation = "NeverPrompt"
-config.default_cursor_style = "BlinkingBar"
-
-config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
-
-config.window_decorations = "RESIZE"
-
--- config.color_scheme = "Sonokai (Gogh)"
-config.color_scheme = "Gruvbox Dark (Gogh)"
--- config.color_scheme = "Tokyo Night (Gogh)"
-
--- Leader key configuration
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
-
--- Key bindings
-config.keys = {
-	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
-	{ key = "-", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+-- Font
+config.font = wezterm.font_with_fallback({
 	{
-		key = "=",
-		mods = "LEADER",
-		action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+		family = "JetBrains Mono",
+		weight = "Regular",
 	},
-	{ key = "o", mods = "LEADER", action = "TogglePaneZoomState" },
-	{ key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
-	{ key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
-	{ key = "h", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
-	{ key = "j", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
-	{ key = "k", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
-	{ key = "l", mods = "LEADER", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
-	{ key = "H", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Left", 5 } }) },
-	{ key = "J", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Down", 5 } }) },
-	{ key = "K", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Up", 5 } }) },
-	{ key = "L", mods = "LEADER|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Right", 5 } }) },
-	{ key = "&", mods = "LEADER|SHIFT", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
-	{ key = "d", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
-	{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
-	{ key = "w", mods = "LEADER", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
-	{ key = "b", mods = "LEADER", action = wezterm.action.EmitEvent("toggle-tabbar") },
-	{ key = "Enter", mods = "LEADER", action = wezterm.action.ActivateCopyMode },
+	"Segoe UI Emoji",
+})
+config.font_size = 10
+
+-- Window
+config.initial_rows = 45
+config.initial_cols = 180
+config.window_decorations = "TITLE | RESIZE"
+config.window_background_opacity = opacity
+config.window_close_confirmation = "NeverPrompt"
+config.win32_system_backdrop = "Acrylic"
+config.max_fps = 144
+config.animation_fps = 60
+config.cursor_blink_rate = 250
+
+-- Colors
+config.color_scheme = "Gruvbox Dark (Gogh)"
+config.force_reverse_video_cursor = true
+config.colors = {
+	foreground = "#ffffff",
+	background = "#16181a",
+
+	cursor_bg = "#ffffff",
+	cursor_fg = "#16181a",
+	cursor_border = "#ffffff",
+
+	selection_fg = "#ffffff",
+	selection_bg = "#3c4048",
+
+	scrollbar_thumb = "#16181a",
+	split = "#16181a",
+
+	ansi = { "#16181a", "#ff6e5e", "#5eff6c", "#f1ff5e", "#5ea1ff", "#bd5eff", "#5ef1ff", "#ffffff" },
+	brights = { "#3c4048", "#ff6e5e", "#5eff6c", "#f1ff5e", "#5ea1ff", "#bd5eff", "#5ef1ff", "#ffffff" },
+	indexed = { [16] = "#ffbd5e", [17] = "#ff6e5e" },
 }
 
--- Quick tab navigation with index
-for i = 1, 9 do
-	table.insert(config.keys, {
-		key = tostring(i),
-		mods = "LEADER",
-		action = wezterm.action.ActivateTab(i - 1),
-	})
-end
+-- Tabs
+config.enable_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+config.show_tab_index_in_tab_bar = false
+config.use_fancy_tab_bar = false
+config.colors.tab_bar = {
+	background = transparent_bg,
+	new_tab = { fg_color = config.colors.background, bg_color = config.colors.brights[6] },
+	new_tab_hover = { fg_color = config.colors.background, bg_color = config.colors.foreground },
+}
+
+wezterm.on("format-tab-title", function(tab, _, _, _, hover)
+	local background = config.colors.brights[1]
+	local foreground = config.colors.foreground
+
+	if tab.is_active then
+		background = config.colors.brights[7]
+		foreground = config.colors.background
+	elseif hover then
+		background = config.colors.brights[8]
+		foreground = config.colors.background
+	end
+
+	local title = tostring(tab.tab_index + 1)
+	return {
+		{ Foreground = { Color = background } },
+		{ Text = "█" },
+		{ Background = { Color = background } },
+		{ Foreground = { Color = foreground } },
+		{ Text = title },
+		{ Foreground = { Color = background } },
+		{ Text = "█" },
+	}
+end)
+
+-- Keybindings
+config.keys = {
+	-- Remap paste for clipboard history compatibility
+	{ key = "v", mods = "CTRL", action = wezterm.action({ PasteFrom = "Clipboard" }) },
+}
 
 return config
