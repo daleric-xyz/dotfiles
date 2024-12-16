@@ -5,7 +5,7 @@
   path = ./aliases.gitconfig
 
 [user]
-  name = Dale Richardson 
+	name = daleric-xyz
   email = daleric@pm.me
 
 [core]
@@ -42,7 +42,6 @@
   trustexitcode = true
 
 [commit]
-  gpgsign = true
   verbose = true
 
 [status]
@@ -88,3 +87,5 @@
   changed = yellow
   untracked = red
 
+[credential]
+	helper = store
