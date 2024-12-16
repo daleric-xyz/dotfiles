@@ -26,25 +26,25 @@ config.animation_fps = 60
 config.cursor_blink_rate = 250
 
 -- Colors
-config.color_scheme = "Gruvbox Dark (Gogh)"
+config.color_scheme = "Poimandres"
 config.force_reverse_video_cursor = true
 config.colors = {
-	foreground = "#EBDBB2",
-	background = "#282828",
+	foreground = "#E4F0FB",
+	background = "#1B1E28",
 
-	cursor_bg = "#EBDBB2",
-	cursor_fg = "#282828",
-	cursor_border = "#EBDBB2",
+	cursor_bg = "#7390AA",
+	cursor_fg = "#1B1E28",
+	cursor_border = "#7390AA",
 
-	selection_fg = "#EBDBB2",
-	selection_bg = "#928374",
+	selection_fg = "#E4F0FB",
+	selection_bg = "#506477",
 
-	scrollbar_thumb = "#282828",
-	split = "#282828",
+	scrollbar_thumb = "#303340",
+	split = "#171922",
 
-	ansi = { "#282828", "#CC241D", "#98971A", "#D79921", "#458588", "#B16286", "#689D6A", "#A89984" },
-	brights = { "#928374", "#FB4934", "#B8BB26", "#FABD2F", "#83A598", "#D3869B", "#8EC07C", "#EBDBB2" },
-	indexed = { [16] = "#FABD2F", [17] = "#FB4934" },
+	ansi = { "#171922", "#D0679D", "#5DE4C7", "#FFFAC2", "#89DDFF", "#FCC5E9", "#89DDFF", "#FFFFFF" },
+	brights = { "#506477", "#D0679D", "#5DE4C7", "#FFFAC2", "#ADD7FF", "#FCC5E9", "#ADD7FF", "#FFFFFF" },
+	indexed = { [16] = "#5DE4C7", [17] = "#D0679D" },
 }
 
 -- Tabs
