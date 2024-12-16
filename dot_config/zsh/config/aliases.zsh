@@ -1,13 +1,14 @@
 # Core Shortcuts
-alias rm='trash' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
+# alias rm='trash' # Use `trash` program instead of built-in irrecoverable way to delete nodes.
 alias mv='mv -iv' # Move nodes with interactive mode and extra verbosity.
 alias ln='ln -iv' # Link nodes with interactive mode and extra verbosity.
 alias mkdir='mkdir -p' # Make missing parent directories when creating folders.
 alias grep="grep --color='auto'" # Grep with colors.
 alias du='du -d 1 --si' # Display size of files and folders under current directory.
 alias df='df -a --si' # Display all disk usage statistics with SI units and FS types.
-alias ls='ls -AFG' # List name of nodes.
-alias la='ls -lAh' # List nodes with their details.
+alias ls='ls -AFG --color=auto' # List name of nodes.
+alias la='ls -lAh --color=auto' # List nodes with their details.
+alias cat='bat --theme=base16' # Better version of cat with syntax highlighting. 
 
 # Custom Shortcuts
 alias v="$EDITOR"
