@@ -1,7 +1,7 @@
 -- Initialize Configuration
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-local opacity = 0.85
+local opacity = 0.95
 local transparent_bg = "rgba(22, 24, 26, " .. opacity .. ")"
 
 -- Font
@@ -26,7 +26,7 @@ config.animation_fps = 60
 config.cursor_blink_rate = 250
 
 -- Colors
-config.color_scheme = "Poimandres"
+config.color_scheme = "Tokyo Night"
 config.force_reverse_video_cursor = true
 config.colors = {
 	foreground = "#E4F0FB",
