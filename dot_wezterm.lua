@@ -4,6 +4,9 @@ local config = wezterm.config_builder()
 local opacity = 0.95
 local transparent_bg = "rgba(22, 24, 26, " .. opacity .. ")"
 
+--- Wayland
+config.enable_wayland = false
+
 -- Font
 config.font = wezterm.font_with_fallback({
 	{
