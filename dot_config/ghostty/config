@@ -1,0 +1,26 @@
+# NOTE:
+# docs:
+# ghostty +show-config --default --docs | nvim
+# examples:
+# https://github.com/search?q=path%3Aghostty%2Fconfig&type=code
+
+# Theme and Window
+# ghostty +list-themes
+# ghostty +list-fonts
+theme = "GruvboxDarkHard"
+background-opacity = 0.95
+window-padding-x = 14
+window-padding-y = 12
+font-size = 10
+window-inherit-working-directory = true
+window-new-tab-position = end
+copy-on-select = false
+confirm-close-surface = false
+quit-after-last-window-closed = false
+gtk-wide-tabs = false
+
+# Keybinds
+keybind = ctrl+t=new_tab
+keybind = alt+h=previous_tab
+keybind = alt+l=next_tab
+keybind = ctrl+shift+r=reload_config
