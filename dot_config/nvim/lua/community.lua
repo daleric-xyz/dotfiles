@@ -21,6 +21,5 @@ return {
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.indent.indent-blankline-nvim" },
   -- Colorscheme
-  { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   { import = "astrocommunity.color.transparent-nvim" },
 }
