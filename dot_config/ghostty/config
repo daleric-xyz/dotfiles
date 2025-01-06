@@ -7,7 +7,7 @@
 # Theme and Window
 # ghostty +list-themes
 # ghostty +list-fonts
-theme = "GruvboxDarkHard"
+theme = "gruvbox-material"
 background-opacity = 0.95
 window-padding-x = 14
 window-padding-y = 12
