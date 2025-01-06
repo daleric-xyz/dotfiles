@@ -11,7 +11,6 @@ return {
   { import = "astrocommunity.pack.ansible" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.docker" },
-  { import = "astrocommunity.pack.hyprlang" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.terraform" },
