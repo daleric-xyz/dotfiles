@@ -8,7 +8,7 @@ alias du='du -d 1 --si' # Display size of files and folders under current direct
 alias df='df -a --si' # Display all disk usage statistics with SI units and FS types.
 alias ls='ls -AFG --color=auto' # List name of nodes.
 alias la='ls -lAh --color=auto' # List nodes with their details.
-alias cat='bat --theme=gruvbox-dark' # Better version of cat with syntax highlighting. 
+alias cat='bat --theme=gruvbox-material-dark' # Better version of cat with syntax highlighting. 
 
 # Custom Shortcuts
 alias v="$EDITOR"
