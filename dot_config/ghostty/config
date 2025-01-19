@@ -22,7 +22,7 @@ quit-after-last-window-closed = false
 gtk-wide-tabs = false
 
 # Keybinds
-keybind = ctrl+t=new_tab
+keybind = ctrl+shift+t=new_tab
 keybind = alt+h=previous_tab
 keybind = alt+l=next_tab
 keybind = ctrl+shift+r=reload_config
