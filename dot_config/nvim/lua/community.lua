@@ -5,6 +5,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+
   -- Languages
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.python" },
@@ -15,11 +16,16 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.yaml" },
+
   -- Plugins
   { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.indent.indent-blankline-nvim" },
-  { import = "astrocommunity.search.nvim-spectre" },
+
+  -- Sed
+  { import = "astrocommunity.search.grug-far-nvim" },
+  -- { import = "astrocommunity.search.nvim-spectre" },
+
   -- Colorscheme
   { import = "astrocommunity.color.transparent-nvim" },
 }
