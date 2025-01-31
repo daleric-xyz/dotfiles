@@ -22,6 +22,9 @@ return {
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.indent.indent-blankline-nvim" },
 
+  -- Picker
+  { import = "astrocommunity.fuzzy-finder.snacks-picker" },
+
   -- Sed
   { import = "astrocommunity.search.grug-far-nvim" },
   -- { import = "astrocommunity.search.nvim-spectre" },
