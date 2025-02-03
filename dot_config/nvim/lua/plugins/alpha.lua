@@ -94,13 +94,9 @@ return {
 
     dashboard.section.buttons.val = {
       dashboard.button("n", "  New File", ":ene <BAR> startinsert <CR>"),
-      dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-      dashboard.button(
-        "f",
-        "  Find file",
-        ":cd $HOME | silent Telescope find_files hidden=true no_ignore=true <CR>"
-      ),
-      dashboard.button("r", "󰄉  Recent files", ":Telescope oldfiles <CR>"),
+      dashboard.button("t", "  Find text", ":lua Snacks.picker.grep() <CR>"),
+      dashboard.button("f", "  Find file", ":cd $HOME | :lua Snacks.picker.files() <CR>"),
+      dashboard.button("r", "󰄉  Recent files", ":lua Snacks.picker.recent() <CR>"),
       dashboard.button("u", "󱐥  Update plugins", "<cmd>Lazy update<CR>"),
       dashboard.button("d", "󱗼  Dotfiles", ":e $HOME/.config/ <CR>"),
       dashboard.button("q", "󰿅  Quit", "<cmd>qa<CR>"),
