@@ -23,7 +23,7 @@ return {
   { import = "astrocommunity.indent.indent-blankline-nvim" },
 
   -- Editing
-  { import = "astrocommunity.editing-support.conform-nvim" },
+  --{ import = "astrocommunity.editing-support.conform-nvim" },
 
   -- Picker
   { import = "astrocommunity.fuzzy-finder.snacks-picker" },
