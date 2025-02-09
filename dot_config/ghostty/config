@@ -4,25 +4,65 @@
 # examples:
 # https://github.com/search?q=path%3Aghostty%2Fconfig&type=code
 
-# Theme and Window
+# Theme
 # ghostty +list-themes
 # ghostty +list-fonts
 theme = "gruvbox-material"
-background-opacity = 0.95
-window-padding-x = 14
-window-padding-y = 12
-font-size = 10
-window-inherit-working-directory = true
-window-new-tab-position = end
-window-theme = ghostty
-window-save-state = always
-copy-on-select = false
-confirm-close-surface = false
-quit-after-last-window-closed = false
+background-opacity = 0.9
+cursor-invert-fg-bg = true
+
+# Window
+gtk-single-instance = true
+gtk-tabs-location = bottom
 gtk-wide-tabs = false
+window-theme = ghostty
+window-padding-y = 2,0
+window-padding-balance = true
+window-decoration = true
+
+# Font
+font-family = Fira Code
+font-family-bold = Fira Code
+font-family-italic = Maple Mono
+font-family-bold-italic = Maple Mono
+font-family = Symbols Nerd Font Mono
+font-size = 10
+
+# Behaviour
+copy-on-select = clipboard
+confirm-close-surface = false
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+mouse-hide-while-typing = true
 
 # Keybinds
-keybind = ctrl+shift+t=new_tab
-keybind = alt+h=previous_tab
-keybind = alt+l=next_tab
-keybind = ctrl+shift+r=reload_config
+keybind = control+c=copy_to_clipboard
+keybind = control+v=paste_from_clipboard
+keybind = shift+space>s>c=clear_screen
+keybind = shift+space>w>n=new_window
+keybind = shift+space>t>n=new_tab
+keybind = shift+space>c>r=reload_config
+keybind = shift+space>p=previous_tab
+keybind = shift+space>n=next_tab
+keybind = shift+space>1=goto_tab:1
+keybind = shift+space>2=goto_tab:2
+keybind = shift+space>3=goto_tab:3
+keybind = shift+space>4=goto_tab:4
+keybind = shift+space>5=goto_tab:5
+keybind = shift+space>6=goto_tab:6
+keybind = shift+space>7=goto_tab:7
+keybind = shift+space>8=goto_tab:8
+keybind = shift+space>9=goto_tab:9
+keybind = shift+space>t>h=move_tab:-1
+keybind = shift+space>t>l=move_tab:1
+keybind = shift+space>s>n=new_split:auto
+keybind = shift+space>s>h=new_split:left
+keybind = shift+space>s>j=new_split:down
+keybind = shift+space>s>k=new_split:up
+keybind = shift+space>s>l=new_split:right
+keybind = shift+space>g>h=goto_split:left
+keybind = shift+space>g>j=goto_split:bottom
+keybind = shift+space>g>k=goto_split:top
+keybind = shift+space>g>l=goto_split:right
+keybind = shift+space>g>n=goto_split:next
