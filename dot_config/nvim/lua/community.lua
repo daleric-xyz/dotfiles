@@ -17,13 +17,12 @@ return {
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.yaml" },
 
-  -- Plugins
-  { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
+  -- Git
   { import = "astrocommunity.git.neogit" },
-  { import = "astrocommunity.indent.indent-blankline-nvim" },
 
   -- Editing
-  --{ import = "astrocommunity.editing-support.conform-nvim" },
+  { import = "astrocommunity.completion.cmp-cmdline" },
+  { import = "astrocommunity.indent.indent-blankline-nvim" },
 
   -- Picker
   { import = "astrocommunity.fuzzy-finder.snacks-picker" },
@@ -33,5 +32,6 @@ return {
   -- { import = "astrocommunity.search.nvim-spectre" },
 
   -- Colorscheme
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.color.transparent-nvim" },
 }
