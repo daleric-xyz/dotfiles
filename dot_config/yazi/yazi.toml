@@ -4,11 +4,10 @@
 linemode    = "size"
 show_hidden = true
 sort_by     = "natural"
+ratio 			= [1, 2, 4]
 
 [preview]
 tab_size   = 2
-max_width  = 1000
-max_height = 1000
 
 [opener]
 edit = [
