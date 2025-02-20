@@ -11,7 +11,7 @@ theme = "gruvbox-material"
 background-opacity = 1
 cursor-invert-fg-bg = true
 
-# Window
+# Window 
 gtk-single-instance = true
 gtk-tabs-location = bottom
 gtk-wide-tabs = false
@@ -21,7 +21,12 @@ window-padding-balance = true
 window-decoration = true
 
 # Font
-font-family = CommitMono
+#font-family = CommitMono
+font-family = Maple Mono NF
+font-feature = cv33
+font-feature = cv34
+font-feature = cv35
+font-feature = cv36
 font-size = 10
 
 # Behaviour
