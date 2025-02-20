@@ -8,7 +8,7 @@
 # ghostty +list-themes
 # ghostty +list-fonts
 theme = "gruvbox-material"
-background-opacity = 0.9
+background-opacity = 1
 cursor-invert-fg-bg = true
 
 # Window
