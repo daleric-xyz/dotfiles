@@ -22,6 +22,7 @@ return {
 
   -- Editing
   { import = "astrocommunity.completion.cmp-cmdline" },
+  { import = "astrocommunity.editing-support.conform-nvim" },
   { import = "astrocommunity.indent.indent-blankline-nvim" },
 
   -- Picker
