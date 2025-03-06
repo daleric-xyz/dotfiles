@@ -9,6 +9,7 @@ alias df='df -a --si' # Display all disk usage statistics with SI units and FS t
 alias ls='ls -AFG --color=auto' # List name of nodes.
 alias la='ls -lAh --color=auto' # List nodes with their details.
 
+# Work specific
 alias reauth="aws sso login --profile login"
 
 # Custom Shortcuts

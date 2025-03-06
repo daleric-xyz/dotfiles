@@ -21,13 +21,21 @@ window-padding-balance = true
 window-decoration = true
 
 # Font
-#font-family = CommitMono
-font-family = Maple Mono NF
-font-feature = cv33
-font-feature = cv34
-font-feature = cv35
-font-feature = cv36
-font-size = 10
+font-family = CommitMono
+font-style = "Regular"
+font-style-italic = "Italic"
+font-style-bold = "Bold"
+font-style-bold-italic = "BoldItalic"
+font-size = 14
+font-thicken = true
+font-thicken-strength = 150
+adjust-cell-width = -5%
+#font-family = Maple Mono NF
+#font-feature = cv33
+#font-feature = cv34
+#font-feature = cv35
+#font-feature = cv36
+
 
 # Behaviour
 copy-on-select = clipboard
@@ -36,6 +44,8 @@ clipboard-read = allow
 clipboard-write = allow
 clipboard-trim-trailing-spaces = true
 mouse-hide-while-typing = true
+shell-integration = zsh
+shell-integration-features = cursor,sudo,title
 
 # Keybinds
 keybind = control+c=copy_to_clipboard

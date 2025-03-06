@@ -3,6 +3,9 @@ if (! [[ -d "$ZDOTDIR/plugins/" ]]) {
   return 1
 }
 
+# fzf-tab: Use fzf as completion menu
+source "$ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh"
+
 # zsh-autopair: Insert or delete brackets, parens, quotes in pair.
 source "$ZDOTDIR/plugins/autopair/autopair.zsh"
 

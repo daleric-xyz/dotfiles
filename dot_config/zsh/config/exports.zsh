@@ -4,6 +4,10 @@ path=(
   $path
 )
 
+echo >> /Users/dale.richardson/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/dale.richardson/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Basics
 export EDITOR='nvim'
 export PAGER='less'
